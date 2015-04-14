@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: normal;
   margin: 3em 0;
   padding: 0;
@@ -205,10 +205,15 @@ body {
   text-align: center;
 }
 
+.message2 {
+  color: #aa0000;
+  line-height: 2.25rem;
+  text-align: center;
+}
+
 @media (max-width: 500px) {
   .details, .message {
     display: block;
-    position: fixed;
     bottom: 0;
     background-color: #fafafa;
     width: 100%;
@@ -216,6 +221,17 @@ body {
     border-top: 1px solid #ccc;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
+
+  .details2, .message2 {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    background-color: #fafafa;
+    width: 100%;
+    padding: 24px 15px;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  } 
 
   .details .name {
     font-size: 1.2em;

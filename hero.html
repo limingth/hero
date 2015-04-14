@@ -1,5 +1,5 @@
 <head>
-	<title>Hero</title>
+	<title>Meteor投票器</title>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 </head>
@@ -7,11 +7,13 @@
 <body>
 	<div class="outer">
 		<div class="logo"></div>
-		<h1 class="title">Hero</h1>
-		<div class="subtitle">选择一个玩家并给他加分</div>
+		<h1 class="title">方案A or 方案B ？</h1>
+		<div class="subtitle">选择一个方案并署上你的名字</div>
+<!--
 		<form class="add-a-player">
 			<input type="text" name="name" placeholder="添加一名新玩家"/>
 		</form><br/><br/>
+-->
 		{{> hero}}
 	</div>
 </body>
@@ -22,16 +24,26 @@
 			{{> player}}
 		{{/each}}
 	</ol>
-
+  <br>
+  <br>
+  <br>
 	{{#if selectedName}}
-		<div class="details">
-			<div class="name">{{selectedName}}</div>
+
+		<div class="message2">你选择了 {{selectedName}}
+      <br>
+      <form class="add-a-player">
+        支持请署名: <input type="text" name="name" placeholder="微信群内昵称"/>
+      </form>
+      <br/>
+
+<!--
 			<button class="up">顶</button>
 			<button class="down">踩</button>
-			<button class="del">删除</button>
+-->
+			<!-- <button class="del">删除</button> -->
 		</div>
 	{{else}}
-		<div class="message">请选择一个玩家</div>
+		<div class="message2">请选择一个方案</div>
 	{{/if}}
 
 </template>
@@ -39,8 +51,14 @@
 <template name="player">
 	<li class="player {{selected}}">
 		<span class="name">{{name}}</span>
-		<span class="score">{{score}}</span>
+		<span class="score">{{newscore}}</span>
 	</li>
+  <div class="message">
+    支持者签名：
+    {{#each voters}}
+      {{name}},
+    {{/each}}
+  </div>
 </template>
 
 
